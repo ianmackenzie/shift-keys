@@ -27,6 +27,16 @@ type Msg
     | RightShiftUp
 
 
+{-| Check for the 'key' field of a keyboard event; if it exists and has the
+value "Shift", then check the 'location' field of the event to try to determine
+whether the left or right shift key has been pressed. This will only work in
+relatively recent browsers.
+
+Note that 'Decode.field "key"' and 'Decode.field "location"' both apply to the
+top-level event being decoded! That is, we're checking one field of the event
+'and then' deciding based on that whether or not to check a different field.
+
+-}
 keyEventDecoder : Decoder Msg
 keyEventDecoder =
     Decode.field "key" Decode.string
