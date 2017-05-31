@@ -55,7 +55,7 @@ view : Model -> Html Msg
 view model =
     Html.div []
         [ Html.div [] [ Html.text "Type in here to see how often you use different Shift keys!" ]
-        , Html.div [] [ Html.textarea [ Events.on "keyup" keyEventDecoder ] [] ]
+        , Html.div [] [ Html.textarea [ Attributes.cols 80, Attributes.rows 10, Events.on "keyup" keyEventDecoder ] [] ]
         , Html.div [] [ Html.text (toString model.rightShiftCount ++ " right shift presses") ]
         , Html.div [] [ Html.text (toString model.leftShiftCount ++ " left shift presses") ]
         , Html.div [] [ Html.text (toString model.unknownShiftCount ++ " unknown shift presses") ]
