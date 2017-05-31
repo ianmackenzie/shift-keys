@@ -4,9 +4,6 @@ import Html exposing (Html)
 import Html.Attributes as Attributes
 import Html.Events as Events
 import Json.Decode as Decode exposing (Decoder)
-import Keyboard as Keyboard exposing (KeyCode)
-import Keyboard.Key as Key exposing (Key)
-import Kintail.InputWidget as InputWidget
 
 
 type alias Model =
